@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td {
+    border: none;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+:root {
+    --primary-color: #fff;
+    --bg: #331d35;
+}
+
+.container {
+    max-width: 1224px;
+    width: 92%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.nav-content {
+    position: relative;
+    width: 100%;
+    padding: 0 30px;
+    margin-top: 100px;
+    background: var(--bg);
+}
+
+.nav-content ul {
+    display: flex;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.nav-content li {
+    flex-basis: 33.3%;
+    border-left: 1px solid rgba(255, 255, 255, 0.21);
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+.nav-content li:first-child {
+    border: none;
+}
+
+.cur-page {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding-top: 16px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.cur-page span {
+    opacity: 0.8;
+    position: relative;
+    top: -6px;
+    color: var(--primary-color);
+    transition: all 300ms linear;
+}
+
+.cur-page:hover span {
+    opacity: 1;
+}
+
+.nav-content li:first-child::before,
+.nav-content li:last-child::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    width: 20%;
+    height: 50%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.11);
+    transition: all 430ms linear;
+}
+
+.nav-content li:last-child::before {
+    left: inherit;
+    right: 20px;
+}
+
+.nav-content li:hover::before {
+    width: 50px;
+}
+
+.nav-content li a.ln span.tooltip,
+.nav-content li a.rn span.tooltip {
+    position: absolute;
+    top: -10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    min-width: 200px;
+    letter-spacing: 2px;
+    visibility: hidden;
+    font-weight: 500;
+    opacity: 0;
+    color: #fff;
+    margin-top: 0;
+    z-index: 20;
+    transition: all 300ms linear;
+}
+
+.nav-content li a:hover span.tooltip {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+    margin-top: -4px;
+}
+
+.nav-content li a.ln,
+.nav-content li a.rn {
+    padding-top: 6px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.nav-content li a.ln {
+    float: left;
+    text-align: left;
+}
+
+.nav-content li a.rn {
+    float: right;
+    text-align: right;
+}
+
+.nav-content li a.ln span.tooltip {
+    left: 50px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.nav-content li a.rn span.tooltip {
+    right: 50px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.nav-content li a {
+    vertical-align: middle;
+}
+
+.nav-content li a.ln i,
+.nav-content li a.rn i {
+    color: var(--primary-color);
+    transition: all 430ms linear;
+}
+
+.nav-content li a.ln:hover i,
+.nav-content li a.rn:hover i {
+    transform: rotateX(360deg);
+}
