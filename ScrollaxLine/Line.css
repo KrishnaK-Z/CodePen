@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6 {
+    border: none;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #FE2D5A;
+    --bg: #212335;
+}
+
+section.parent {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 1;
+}
+
+.container {
+    max-width: 1224px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.line {
+    float: left;
+    width: 20%;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(143, 143, 170, 0.2);
+    height: 100%;
+    position: relative;
+}
+
+.line:last-child {
+    border-left: 1px solid rgba(143, 143, 170, 0.2);
+}
+
+.line:first-child::before,
+.line:last-child::before,
+.line:nth-child(2)::before,
+.line:nth-child(3)::before,
+.line:nth-child(4)::before{
+    content: '';
+    position: absolute;
+    right: -2px;
+    background: var(--primary-color);
+    width: 4px;
+    height: 30px;
+}
+
+.line:first-child::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    background: var(--primary-color);
+    width: 4px;
+    height: 30px;
+    animation: scroll5 10s ease-out infinite;
+}
+
+.line:first-child::before {
+    animation: scroll1 8s ease-out infinite;
+}
+
+.line:last-child::before {
+    animation: scroll5 6s ease-out infinite;
+}
+
+.line:nth-child(3)::before {
+    animation: scroll3 12s ease-out infinite;
+}
+
+.line:nth-child(2)::before {
+    animation: scroll2 12s ease-out infinite;
+}
+
+.line:nth-child(4)::before {
+    animation: scroll3 10s ease-out infinite;
+}
+
+@keyframes scroll1 {
+    0% {
+        opacity: 1;
+        top: 0
+    }
+    50% {
+        top: 50%
+    }
+    100% {
+        top: 100%;
+        opacity: 0.5;
+    }
+}
+
+@keyframes scroll5 {
+    0% {
+        opacity: 1;
+        bottom: 0
+    }
+    50% {
+        bottom: 50%
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0.5;
+    }
+}
+
+@keyframes scroll3 {
+    0% {
+        opacity: 1;
+        top: 0
+    }
+    30% {
+        top: 30%
+    }
+    70% {
+        top: 70%
+    }
+    100% {
+        top: 100%;
+        opacity: 0.5;
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        opacity: 1;
+        bottom: 0
+    }
+    30% {
+        bottom: 30%
+    }
+    70% {
+        bottom: 70%
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0.5;
+    }
+}
